@@ -10,17 +10,17 @@ public class ChangeSceneManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == "SampleScene")
+        if (currentScene.name == "Escena1")
         {
-            SceneManager.LoadScene("Scene2");
+            SceneManager.LoadScene("Escena2");
         }
 
-        if (currentScene.name == "Scene2")
+        if (currentScene.name == "Escena2")
         {
-            SceneManager.LoadScene("Scene3");
+            SceneManager.LoadScene("Escena3");
         }
 
-        if (currentScene.name == "Scene3")
+        if (currentScene.name == "Escena3")
         {
             SceneManager.LoadScene("PrincipalMenu");
         }
