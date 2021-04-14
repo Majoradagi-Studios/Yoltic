@@ -24,7 +24,8 @@ public class YolticMovement : MonoBehaviour
     {
         Horizontal = Input.GetAxisRaw("Horizontal");
 
-        Animator.SetBool("Moving", Horizontal != 0.0f);
+        //Set false if the player isn't moving and isn't in the ground
+        Animator.SetBool("Moving", Horizontal != 0.0f && Grounded == true);
 
         if (Horizontal < 0.0f)
             transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
@@ -35,11 +36,23 @@ public class YolticMovement : MonoBehaviour
         if (Physics2D.Raycast(transform.position, Vector3.down, 0.35f))
         {
             Grounded = true;
-        } else Grounded = false;
+            Animator.SetBool("Grounded", true);
+        }
+        else
+        {
+            Grounded = false;
+            Animator.SetBool("Grounded", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && Grounded)
         {
+            Animator.SetBool("Grounded", false);
             Jump();
+        }
+
+        if (Input.GetKey(KeyCode.J))
+        {
+            Animator.SetTrigger("Press_J");
         }
     }
 
