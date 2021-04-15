@@ -1,7 +1,106 @@
 fileFormatVersion: 2
 guid: c15f3a33f7497824aa38ed0a50ea8873
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 49075783968275450
+    second: WALK_ONE_LAYER_0
+  - first:
+      213: 424339529963534528
+    second: WALK_ONE_LAYER_1
+  - first:
+      213: -2175395419954017852
+    second: WALK_ONE_LAYER_2
+  - first:
+      213: 1498468099991158293
+    second: WALK_ONE_LAYER_3
+  - first:
+      213: 2368471897023534712
+    second: WALK_ONE_LAYER_4
+  - first:
+      213: -8983724452576468948
+    second: WALK_ONE_LAYER_5
+  - first:
+      213: -4887443488682671451
+    second: WALK_ONE_LAYER_6
+  - first:
+      213: -2361968793258350569
+    second: WALK_ONE_LAYER_7
+  - first:
+      213: 9222545063130217324
+    second: WALK_ONE_LAYER_8
+  - first:
+      213: 3650410537535443875
+    second: WALK_ONE_LAYER_9
+  - first:
+      213: 3521866281729567296
+    second: WALK_ONE_LAYER_10
+  - first:
+      213: 7103363789159351905
+    second: WALK_ONE_LAYER_11
+  - first:
+      213: 8286880647682139392
+    second: WALK_ONE_LAYER_12
+  - first:
+      213: 7350441938664310911
+    second: WALK_ONE_LAYER_13
+  - first:
+      213: -684186136732243258
+    second: WALK_ONE_LAYER_14
+  - first:
+      213: 6726544333831924157
+    second: WALK_ONE_LAYER_15
+  - first:
+      213: -1050669061262744569
+    second: WALK_ONE_LAYER_16
+  - first:
+      213: -5850800845014728774
+    second: WALK_ONE_LAYER_17
+  - first:
+      213: -4209240314999266532
+    second: WALK_ONE_LAYER_18
+  - first:
+      213: 5416987157091043590
+    second: WALK_ONE_LAYER_19
+  - first:
+      213: 4200699271970061377
+    second: WALK_ONE_LAYER_20
+  - first:
+      213: -2202695930379828965
+    second: WALK_ONE_LAYER_21
+  - first:
+      213: -7476972088396266562
+    second: WALK_ONE_LAYER_22
+  - first:
+      213: -3010483052862832612
+    second: WALK_ONE_LAYER_23
+  - first:
+      213: -3495108973171205260
+    second: WALK_ONE_LAYER_24
+  - first:
+      213: -3906981323743561607
+    second: WALK_ONE_LAYER_25
+  - first:
+      213: -7598910360436399050
+    second: WALK_ONE_LAYER_26
+  - first:
+      213: 4475867833107158265
+    second: WALK_ONE_LAYER_27
+  - first:
+      213: 3811947135310332871
+    second: WALK_ONE_LAYER_28
+  - first:
+      213: 5458777924622289444
+    second: WALK_ONE_LAYER_29
+  - first:
+      213: 441884641140989238
+    second: WALK_ONE_LAYER_30
+  - first:
+      213: -5126806090370226925
+    second: WALK_ONE_LAYER_31
+  - first:
+      213: 814877057959175304
+    second: WALK_ONE_LAYER_32
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +130,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +139,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +170,222 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 106
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbb08e5a2a5ea000800000000000000
+      internalID: 49075783968275450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 108
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c901ab24617fc1e0800000000000000
+      internalID: -2175395419954017852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_4
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 110
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876559244a08ed020800000000000000
+      internalID: 2368471897023534712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_16
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 62
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704e0f23e064b61f0800000000000000
+      internalID: -1050669061262744569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_18
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 62
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13273a2c36c595c0800000000000000
+      internalID: -4209240314999266532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_19
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 60
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609c3437e110d2b40800000000000000
+      internalID: 5416987157091043590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_26
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6342726b94f3b8690800000000000000
+      internalID: -7598910360436399050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_27
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f413fd741a7d1e30800000000000000
+      internalID: 4475867833107158265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WALK_ONE_LAYER_29
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 6
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a0bd0c99971cb40800000000000000
+      internalID: 5458777924622289444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

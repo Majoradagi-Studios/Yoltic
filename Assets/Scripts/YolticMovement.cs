@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class YolticMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class YolticMovement : MonoBehaviour
     private Animator Animator;
     private float Horizontal;
     private bool Grounded;
+    private int Health = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class YolticMovement : MonoBehaviour
         else if (Horizontal > 0.0f)
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-        Debug.DrawRay(transform.position, Vector3.down * 0.35f, Color.red);
+        //Debug.DrawRay(transform.position, Vector3.down * 0.35f, Color.red);
         if (Physics2D.Raycast(transform.position, Vector3.down, 0.35f))
         {
             Grounded = true;
@@ -64,5 +66,30 @@ public class YolticMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
+    }
+
+    //This is when Yoltic recive damage from enemies and die if not have more health
+    public void hit()
+    {
+        Health = Health - 1;
+        Debug.Log(Health);
+        if (Health == 0)
+        {
+            Destroy(gameObject);
+            StartCoroutine(waitSeconds());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
+    }
+
+    //Yoltic attack enemies
+    public void attack()
+    {
+
+    }
+
+    IEnumerator waitSeconds()
+    {
+        yield return new WaitForSeconds(5);
     }
 }

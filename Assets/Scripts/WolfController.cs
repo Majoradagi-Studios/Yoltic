@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraScript : MonoBehaviour
+public class WolfController : MonoBehaviour
 {
-    public GameObject Yoltic;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +13,6 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Yoltic == null) return;
-        Vector3 position = transform.position;
-        position.x = Yoltic.transform.position.x;
-        transform.position = position;
-
+        
     }
 }
