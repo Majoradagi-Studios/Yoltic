@@ -17,13 +17,15 @@ public class ChangeSceneManager : MonoBehaviour
 
         if (currentScene.name == "Escena2")
         {
-            SceneManager.LoadScene("Escena3");
+            SceneManager.LoadScene("PrincipalMenu");
         }
 
+        /*
         if (currentScene.name == "Escena3")
         {
             SceneManager.LoadScene("PrincipalMenu");
-        }
+        }}
+        */
     }
 
 }

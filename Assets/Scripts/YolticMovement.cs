@@ -7,12 +7,18 @@ public class YolticMovement : MonoBehaviour
 {
     public float Speed;
     public float JumpForce;
+    public int Health = 5;
+
+    //Audios
+    public AudioClip MoveSound;
+    public AudioClip JumpSound;
+    public AudioClip AttackSound;
 
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
     private float Horizontal;
     private bool Grounded;
-    private int Health = 5;
+    private bool isAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -52,9 +58,12 @@ public class YolticMovement : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             Animator.SetTrigger("Press_J");
+            Attack();
+            // isAttack = false;
+            // Debug.Log(isAttack);
         }
     }
 
@@ -68,11 +77,35 @@ public class YolticMovement : MonoBehaviour
         Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
     }
 
-    //This is when Yoltic recive damage from enemies and die if not have more health
-    public void hit()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Health = Health - 1;
-        Debug.Log(Health);
+        if (isAttack)
+        {
+            GhostController ghost = collision.collider.GetComponent<GhostController>();
+            LloronaController llorona = collision.collider.GetComponent<LloronaController>();
+            if (ghost != null)
+            {
+                ghost.Hit();
+                isAttack = false;
+            }
+            if (llorona != null)
+            {
+                llorona.Hit();
+                isAttack = false;
+            }
+        }
+        else isAttack = false;
+    }
+
+
+    //This is when Yoltic recive damage from enemies and die if not have more health
+    public void Hit()
+    {
+        if (!isAttack)
+        {
+            Health = Health - 1;
+        }
+        Debug.Log("Yoltic: " + Health);
         if (Health == 0)
         {
             Destroy(gameObject);
@@ -83,9 +116,10 @@ public class YolticMovement : MonoBehaviour
     }
 
     //Yoltic attack enemies
-    public void attack()
+    public void Attack()
     {
-
+        isAttack = true;
+       // Debug.Log(isAttack);
     }
 
     IEnumerator waitSeconds()

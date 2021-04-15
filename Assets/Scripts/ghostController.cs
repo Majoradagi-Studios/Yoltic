@@ -10,7 +10,7 @@ public class GhostController : MonoBehaviour
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
     private Vector3 directionToPlayer;
-    private int Health;
+    private int Health = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +30,13 @@ public class GhostController : MonoBehaviour
             transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
 
         float distance = Mathf.Abs(Player.transform.position.x - transform.position.x);
-    
+
         if (distance < 2.0f)
         {
             //Debug.Log("In range");
             MoveEnemy();
         }
+        else Animator.SetBool("Moving", false);
     
     }
 
@@ -44,7 +45,7 @@ public class GhostController : MonoBehaviour
         YolticMovement yoltic = collision.collider.GetComponent<YolticMovement>();
         if (yoltic != null)
         {
-            yoltic.hit();
+            yoltic.Hit();
         }
     }
 
@@ -52,11 +53,13 @@ public class GhostController : MonoBehaviour
     {
         directionToPlayer = (Player.transform.position - transform.position).normalized;
         Rigidbody2D.velocity = new Vector2(directionToPlayer.x * speed, Rigidbody2D.velocity.y);
+        Animator.SetBool("Moving", true);
     }
 
-    public void hit()
+    public void Hit()
     {
         Health = Health - 1;
+        Debug.Log("Enemy: "+ Health);
         if (Health == 0) Destroy(gameObject);
     }
 }

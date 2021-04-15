@@ -11,7 +11,8 @@ public class ScoreManage : MonoBehaviour
     private Scene currentScene;
     public Text scoreText;
     int score = 0;
-
+    private YolticMovement yolticHealth;
+    
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
@@ -25,7 +26,12 @@ public class ScoreManage : MonoBehaviour
 
         if (currentScene.name == "PrincipalMenu")
         {
-            DestroyImmediate(this);
+            DestroyImmediate(gameObject);
+        }
+
+        if (yolticHealth.Health == 0)
+        {
+            Destroy(gameObject);
         }
     }
 
