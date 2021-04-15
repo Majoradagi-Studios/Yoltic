@@ -1953,9 +1953,9 @@ MonoBehaviour:
   JumpForce: 250
   Health: 5
   slider: {fileID: 1659222171}
-  MoveSound: {fileID: 0}
-  JumpSound: {fileID: 0}
-  AttackSound: {fileID: 0}
+  MoveSound: {fileID: 8300000, guid: 819810eac37c54c4d9289c73a174f887, type: 3}
+  JumpSound: {fileID: 8300000, guid: 558c21d38089486439f90c77dd643053, type: 3}
+  AttackSound: {fileID: 8300000, guid: bc731636a73ae2142bfb2516c4ee3cde, type: 3}
 --- !u!95 &460634189
 Animator:
   serializedVersion: 3
@@ -6343,6 +6343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 703102991}
+  score: 0
 --- !u!4 &1873909538
 Transform:
   m_ObjectHideFlags: 0
