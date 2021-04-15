@@ -1067,8 +1067,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 299432266050476992, guid: 3bcc69ad29b75e446b01ba1dd7d71221, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1860213184}
+  - {fileID: 1860213184}
   followCamera: {fileID: 519420028}
   spawnRate: 10
 --- !u!4 &402691148
@@ -2895,6 +2895,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d71af6b79a056d34bbc00c9120476eda, type: 3}
+--- !u!1 &1860213184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 299432266050476992, guid: 3bcc69ad29b75e446b01ba1dd7d71221,
+    type: 3}
+  m_PrefabInstance: {fileID: 3252305917512892395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1873909536
 GameObject:
   m_ObjectHideFlags: 0
