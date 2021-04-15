@@ -10,12 +10,24 @@ public class ScoreManage : MonoBehaviour
 
     private Scene currentScene;
     public Text scoreText;
-    int score = 0;
-    private YolticMovement yolticHealth;
+    public int score = 0;
+    int Health;
     
     void Start()
     {
+        Health = GameObject.FindGameObjectWithTag("Player").GetComponent<YolticMovement>().Health;
         currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name == "PrincipalMenu" )
+        {
+            DestroyImmediate(this);
+        }
+
+        if (Health == 0)
+        {
+            score = 0;
+        }
+
         if (scoreManage == null)
         {
             scoreManage = this;
@@ -24,15 +36,7 @@ public class ScoreManage : MonoBehaviour
         else
             Destroy(gameObject);
 
-        if (currentScene.name == "PrincipalMenu")
-        {
-            DestroyImmediate(gameObject);
-        }
-
-        if (yolticHealth.Health == 0)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
 
@@ -40,7 +44,7 @@ public class ScoreManage : MonoBehaviour
     {
         if (scoreText == null)
         {
-            scoreText = GameObject.Find("Text").GetComponent<Text>();
+            scoreText = GameObject.FindGameObjectWithTag("Coins").GetComponent<Text>();
             scoreText.text = score.ToString();
         }
         

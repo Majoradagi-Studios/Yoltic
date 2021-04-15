@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class YolticMovement : MonoBehaviour
 {
     public float Speed;
     public float JumpForce;
+
+    //health 
     public int Health = 5;
+    public Slider slider;
 
     //Audios
     public AudioClip MoveSound;
@@ -20,11 +24,16 @@ public class YolticMovement : MonoBehaviour
     private bool Grounded;
     private bool isAttack;
 
+    ScoreManage restartScore;
+
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        slider.maxValue = Health;
+        slider.value = Health;
+
     }
 
     // Update is called once per frame
@@ -104,6 +113,7 @@ public class YolticMovement : MonoBehaviour
         if (!isAttack)
         {
             Health = Health - 1;
+            slider.value = Health;
         }
         Debug.Log("Yoltic: " + Health);
         if (Health == 0)

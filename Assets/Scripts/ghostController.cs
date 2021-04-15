@@ -23,6 +23,7 @@ public class GhostController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Player == null) return;
         Vector3 direction = Player.transform.position - transform.position;
         if (direction.x >= 0.0f)
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);

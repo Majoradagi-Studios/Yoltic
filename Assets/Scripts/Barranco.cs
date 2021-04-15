@@ -9,6 +9,9 @@ public class Barranco : MonoBehaviour
     {
         YolticMovement yoltic = collision.collider.GetComponent<YolticMovement>();
         Destroy(yoltic);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (yoltic == null)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
