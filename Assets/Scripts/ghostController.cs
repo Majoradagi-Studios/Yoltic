@@ -60,7 +60,7 @@ public class GhostController : MonoBehaviour
     public void Hit()
     {
         Health = Health - 1;
-        Debug.Log("Enemy: "+ Health);
+        // Debug.Log("Enemy: "+ Health);
         if (Health == 0) Destroy(gameObject);
     }
 }

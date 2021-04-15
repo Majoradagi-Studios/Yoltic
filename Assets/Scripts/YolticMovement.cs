@@ -17,20 +17,24 @@ public class YolticMovement : MonoBehaviour
     public AudioClip MoveSound;
     public AudioClip JumpSound;
     public AudioClip AttackSound;
+    public AudioClip DamageSound;
+    public AudioClip RageSound;
 
+    private AudioSource _audioSource;
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
+
     private float Horizontal;
     private bool Grounded;
     private bool isAttack;
 
-    ScoreManage restartScore;
 
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         slider.maxValue = Health;
         slider.value = Health;
 
@@ -63,8 +67,10 @@ public class YolticMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && Grounded)
         {
-            Animator.SetBool("Grounded", false);
+            _audioSource.PlayOneShot(JumpSound, 1);
             Jump();
+            Animator.SetBool("Grounded", false);
+
         }
 
         if (Input.GetKeyDown(KeyCode.J))
@@ -73,6 +79,11 @@ public class YolticMovement : MonoBehaviour
             Attack();
             // isAttack = false;
             // Debug.Log(isAttack);
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -112,15 +123,16 @@ public class YolticMovement : MonoBehaviour
     {
         if (!isAttack)
         {
+            _audioSource.PlayOneShot(DamageSound, 1);
             Health = Health - 1;
             slider.value = Health;
         }
-        Debug.Log("Yoltic: " + Health);
+        // Debug.Log("Yoltic: " + Health);
         if (Health == 0)
         {
-            Destroy(gameObject);
-            StartCoroutine(waitSeconds());
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            _audioSource.PlayOneShot(RageSound, 1);
+            gameObject.SetActive(false);
+            Invoke("RestartGame", 2.0f);
         }
         
     }
@@ -128,12 +140,13 @@ public class YolticMovement : MonoBehaviour
     //Yoltic attack enemies
     public void Attack()
     {
+        _audioSource.PlayOneShot(AttackSound, 1);
         isAttack = true;
        // Debug.Log(isAttack);
     }
 
-    IEnumerator waitSeconds()
+    void RestartGame()
     {
-        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
